@@ -10,3 +10,6 @@ Nama : Muhammad Syaifudin Zuhri
 Prodi : Teknik Informatika
 
 Email : zuzu2uuu12@gmail.com
+
+```{tableofcontents}
+```
