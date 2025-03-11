@@ -60,6 +60,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'LOF';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -463,13 +465,13 @@ Reachability distance antara titik 3 dan tetangga:</p>
 </ul>
 </li>
 <li><p><strong>Hitung Local Reachability Density (LRD)</strong>:<br />
-[
+<span class="math notranslate nohighlight">\(
 \text{LRD}(3) = \frac{1}{\frac{1}{2} \times (1.41 + 1.41)} = 0.71
-]</p></li>
+\)</span></p></li>
 <li><p><strong>Hitung LOF</strong>:<br />
-[
+<span class="math notranslate nohighlight">\(
 \text{LOF}(3) = \frac{0.71}{0.71} + \frac{0.71}{0.71} = 2
-]</p></li>
+\)</span></p></li>
 <li><p><strong>Interpretasi</strong>:<br />
 Karena <strong>LOF = 2</strong> (lebih besar dari 1), titik 3 dianggap <strong>outlier</strong>.</p></li>
 </ol>
