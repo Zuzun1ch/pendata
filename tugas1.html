@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tugas 1 &#8212; Penambangan Data</title>
+    <title>Data Understanding &#8212; Penambangan Data</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tugas1';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tugas 2" href="tugas2.html" />
+    <link rel="next" title="Outlier Deteksi" href="tugas2.html" />
     <link rel="prev" title="Selamat datang di website pribadi saya!" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,8 +169,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Tugas 1</strong></a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tugas2.html"><strong>Tugas 2</strong></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Data Understanding</strong></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tugas2.html"><strong>Outlier Deteksi</strong></a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="KNN.html"><strong>Deteksi Outlier dengan K-Nearest Neighbors (KNN) dalam Data Understanding</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="LOF.html"><strong>Deteksi Outlier dengan metode Local Outlier Factor (LOF) dalam Data Understanding</strong></a></li>
 </ul>
@@ -357,7 +357,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tugas 1</h1>
+    <h1>Data Understanding</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -367,16 +367,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-paket-untuk-mysql-dan-postgresql">Instalasi Paket untuk MySQL dan PostgreSQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-data">Sampling data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-data">Profiling data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-dan-asosiasi">Korelasi dan Asosiasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-paket-untuk-mysql-dan-postgresql">Instalasi Paket untuk MySQL dan PostgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-data">Sampling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-data">Profiling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-dan-asosiasi">Korelasi dan Asosiasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-dari-aiven-io-kemudian-divisualisasikan">Koneksi ke Database Mysql dan PosgreSQL melalui dari aiven.io, kemudian divisualisasikan</a></li>
 </ul>
             </nav>
@@ -389,17 +386,15 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tugas-1">
-<h1><strong>Tugas 1</strong><a class="headerlink" href="#tugas-1" title="Link to this heading">#</a></h1>
-<section id="data-understanding">
-<h2>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-understanding">
+<h1><strong>Data Understanding</strong><a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
 <p>Data Understanding adalah tahap awal dalam Knowledge Discovery in Database (KDD) atau data mining yang berfokus pada eksplorasi dan pemahaman karakteristik data sebelum dilakukan analisis lebih lanjut. Proses ini mencakup pemeriksaan struktur, pola, kualitas, serta hubungan dalam data untuk memastikan bahwa data yang digunakan relevan, bersih, dan siap untuk ditambang. Pemahaman yang baik terhadap data akan meningkatkan akurasi dan efektivitas dalam proses analisis serta pengambilan keputusan.</p>
 <section id="pengumpulan-data">
-<h3>Pengumpulan data<a class="headerlink" href="#pengumpulan-data" title="Link to this heading">#</a></h3>
+<h2>Pengumpulan data<a class="headerlink" href="#pengumpulan-data" title="Link to this heading">#</a></h2>
 <p>Pada tahap ini, data dikumpulkan dari berbagai sumber dan disimpan dalam platform seperti <a class="reference external" href="http://Aiven.io">Aiven.io</a>, yang memungkinkan integrasi dari berbagai database. Proses pengumpulan data harus memastikan bahwa data yang diperoleh relevan, akurat, dan sesuai dengan tujuan analisis. Validasi dan pemilihan data yang tepat sangat penting agar hasil analisis nantinya dapat memberikan wawasan yang valid dan bermanfaat.</p>
 </section>
 <section id="instalasi-paket-untuk-mysql-dan-postgresql">
-<h3>Instalasi Paket untuk MySQL dan PostgreSQL<a class="headerlink" href="#instalasi-paket-untuk-mysql-dan-postgresql" title="Link to this heading">#</a></h3>
+<h2>Instalasi Paket untuk MySQL dan PostgreSQL<a class="headerlink" href="#instalasi-paket-untuk-mysql-dan-postgresql" title="Link to this heading">#</a></h2>
 <p>Instalasi paket untuk MySQL dan PostgreSQL adalah proses pemasangan perangkat lunak atau library yang diperlukan untuk memungkinkan koneksi, pengelolaan, dan manipulasi database MySQL serta PostgreSQL. Paket ini biasanya mencakup driver, dependensi, serta alat bantu yang mendukung komunikasi antara aplikasi dan database. Instalasi ini penting untuk memastikan sistem dapat berinteraksi dengan database secara optimal, baik untuk menjalankan query, mengelola data, maupun melakukan analisis lebih lanjut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -433,25 +428,24 @@
 </div>
 </section>
 <section id="sampling-data">
-<h3>Sampling data<a class="headerlink" href="#sampling-data" title="Link to this heading">#</a></h3>
+<h2>Sampling data<a class="headerlink" href="#sampling-data" title="Link to this heading">#</a></h2>
 <p>Sampling data adalah proses pemilihan subset dari keseluruhan dataset untuk dianalisis tanpa harus memproses seluruh data. Teknik ini memungkinkan efisiensi dalam analisis sekaligus mempertahankan representasi yang cukup dari pola dalam data. Dalam tahap ini, data dikelompokkan berdasarkan kelas tertentu untuk memudahkan pemahaman dan visualisasi. Sebagai contoh, dalam dataset Iris, setiap jenis bunga dikategorikan dengan warna berbeda: Iris-setosa berwarna biru, Iris-versicolor berwarna merah, dan Iris-virginica berwarna hijau. Pendekatan ini membantu dalam interpretasi data serta meningkatkan efektivitas dalam analisis lebih lanjut.</p>
 </section>
 <section id="profiling-data">
-<h3>Profiling data<a class="headerlink" href="#profiling-data" title="Link to this heading">#</a></h3>
+<h2>Profiling data<a class="headerlink" href="#profiling-data" title="Link to this heading">#</a></h2>
 <p>Profiling data adalah proses membuat ringkasan dari setiap variabel dalam dataset, termasuk jenis data, distribusi, serta kualitasnya. Tahap ini mencakup pemeriksaan struktur data, identifikasi nilai yang hilang (missing values), serta deteksi inkonsistensi sebelum data digunakan dalam analisis lebih lanjut.</p>
 </section>
 <section id="visualisasi-data">
-<h3>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h3>
+<h2>Visualisasi Data<a class="headerlink" href="#visualisasi-data" title="Link to this heading">#</a></h2>
 <p>Visualisasi data adalah teknik dalam analisis dataset yang digunakan untuk memahami, mengeksplorasi, dan menyajikan pola dalam data secara grafis. Dengan visualisasi, pola, tren, distribusi, serta hubungan antar variabel dapat lebih mudah diidentifikasi. Penggunaan diagram, grafik, atau plot membantu mempercepat proses analisis dan mendukung pengambilan keputusan berbasis data.</p>
 </section>
 <section id="korelasi-dan-asosiasi">
-<h3>Korelasi dan Asosiasi<a class="headerlink" href="#korelasi-dan-asosiasi" title="Link to this heading">#</a></h3>
+<h2>Korelasi dan Asosiasi<a class="headerlink" href="#korelasi-dan-asosiasi" title="Link to this heading">#</a></h2>
 <p>Korelasi dan asosiasi adalah metode untuk mengukur hubungan antara variabel dalam dataset. Korelasi berfokus pada hubungan linier antar variabel dengan menghitung koefisien korelasi, sedangkan asosiasi mengidentifikasi keterkaitan antara atribut yang mungkin tidak bersifat linier. Analisis ini bertujuan untuk memahami bagaimana satu variabel dapat memengaruhi atau berhubungan dengan variabel lainnya.</p>
 </section>
 <section id="eksplorasi-data">
-<h3>Eksplorasi Data<a class="headerlink" href="#eksplorasi-data" title="Link to this heading">#</a></h3>
+<h2>Eksplorasi Data<a class="headerlink" href="#eksplorasi-data" title="Link to this heading">#</a></h2>
 <p>Eksplorasi data adalah tahap awal dalam analisis data yang bertujuan untuk memahami karakteristik, distribusi, dan pola dalam dataset. Proses ini mencakup perhitungan statistik deskriptif seperti mean, median, modus, standar deviasi, nilai minimum, dan maksimum. Selain itu, teknik visualisasi seperti histogram dan scatter plot digunakan untuk mengidentifikasi pola awal atau tren dalam data, yang dapat membantu dalam tahap analisis lebih lanjut.</p>
-</section>
 </section>
 <section id="koneksi-ke-database-mysql-dan-posgresql-melalui-dari-aiven-io-kemudian-divisualisasikan">
 <h2>Koneksi ke Database Mysql dan PosgreSQL melalui dari <a class="reference external" href="http://aiven.io">aiven.io</a>, kemudian divisualisasikan<a class="headerlink" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-dari-aiven-io-kemudian-divisualisasikan" title="Link to this heading">#</a></h2>
@@ -750,7 +744,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>Tugas 2</strong></p>
+        <p class="prev-next-title"><strong>Outlier Deteksi</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -771,16 +765,13 @@
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-understanding">Data Understanding</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-paket-untuk-mysql-dan-postgresql">Instalasi Paket untuk MySQL dan PostgreSQL</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-data">Sampling data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-data">Profiling data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-dan-asosiasi">Korelasi dan Asosiasi</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pengumpulan-data">Pengumpulan data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalasi-paket-untuk-mysql-dan-postgresql">Instalasi Paket untuk MySQL dan PostgreSQL</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sampling-data">Sampling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#profiling-data">Profiling data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-data">Visualisasi Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#korelasi-dan-asosiasi">Korelasi dan Asosiasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-data">Eksplorasi Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#koneksi-ke-database-mysql-dan-posgresql-melalui-dari-aiven-io-kemudian-divisualisasikan">Koneksi ke Database Mysql dan PosgreSQL melalui dari aiven.io, kemudian divisualisasikan</a></li>
 </ul>
   </nav></div>
