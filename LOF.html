@@ -371,6 +371,14 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-lof">APA ITU LOF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-tahapan-lof">BAGAIMANA TAHAPAN LOF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-manual-lof">CONTOH MENGHITUNG MANUAL LOF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-euclidean"><strong>2. Hitung Jarak Euclidean</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-9"><strong>Jarak Titik 10 ke Titik 9</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-8"><strong>Jarak Titik 10 ke Titik 8</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-7"><strong>Jarak Titik 10 ke Titik 7</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-k-tetangga-terdekat-k-3"><strong>3. Tentukan k-Tetangga Terdekat</strong> (k = 3)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-reachability-distance"><strong>4. Hitung Reachability Distance</strong></a></li>
 </ul>
             </nav>
         </div>
@@ -466,25 +474,189 @@ Misalkan data berikut:</p></li>
 </table>
 </div>
 <p>Kita akan hitung LOF untuk <strong>titik 10</strong> (20.0, 25.0) yang diduga sebagai outlier.</p>
-<ol class="arabic simple" start="2">
-<li><p><strong>Hitung Jarak Euclidean</strong>:<br />
-Jarak antara titik 10 dan titik lainnya:</p>
+<p>Baik! Berikut adalah penjelasan yang lebih mendetail mengenai setiap langkah perhitungan.</p>
+</section>
+<hr class="docutils" />
+<section id="hitung-jarak-euclidean">
+<h2><strong>2. Hitung Jarak Euclidean</strong><a class="headerlink" href="#hitung-jarak-euclidean" title="Link to this heading">#</a></h2>
+<p>Jarak Euclidean antara dua titik ((x_1, y_1)) dan ((x_2, y_2)) dalam ruang 2 dimensi dihitung dengan rumus:</p>
+<p><span class="math notranslate nohighlight">\(
+d(A, B) = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+\)</span></p>
+<p>Misalkan kita memiliki koordinat berikut:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Titik</p></th>
+<th class="head"><p>( x )</p></th>
+<th class="head"><p>( y )</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>( x_{10} )</p></td>
+<td><p>( y_{10} )</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>( x_9 )</p></td>
+<td><p>( y_9 )</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>( x_8 )</p></td>
+<td><p>( y_8 )</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>( x_7 )</p></td>
+<td><p>( y_7 )</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Sekarang kita hitung satu per satu.</p>
+<section id="jarak-titik-10-ke-titik-9">
+<h3><strong>Jarak Titik 10 ke Titik 9</strong><a class="headerlink" href="#jarak-titik-10-ke-titik-9" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+d(10,9) = \sqrt{(x_9 - x_{10})^2 + (y_9 - y_{10})^2}
+\)</span>
+Misalkan diketahui koordinatnya:</p>
 <ul class="simple">
-<li><p>Titik 10 ke Titik 9: 17.20</p></li>
-<li><p>Titik 10 ke Titik 8: 16.12</p></li>
-<li><p>Titik 10 ke Titik 7: 15.03</p></li>
+<li><p>( x_{10} = 5 ), ( y_{10} = 8 )</p></li>
+<li><p>( x_9 = 20 ), ( y_9 = 25 )</p></li>
 </ul>
-</li>
-<li><p><strong>Tentukan k-Tetangga Terdekat</strong> (k=3):<br />
-Titik 10 memiliki tiga tetangga terdekat: titik 9, titik 8, dan titik 7.</p></li>
-<li><p><strong>Hitung Reachability Distance</strong>:<br />
-Reachability distance antara titik 10 dan tetangga:</p>
+<p>Maka:</p>
+<p><span class="math notranslate nohighlight">\(
+d(10,9) = \sqrt{(20 - 5)^2 + (25 - 8)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{(15)^2 + (17)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{225 + 289}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{514}
+\)</span>
+<span class="math notranslate nohighlight">\(
+\approx 17.20
+\)</span></p>
+</section>
+<section id="jarak-titik-10-ke-titik-8">
+<h3><strong>Jarak Titik 10 ke Titik 8</strong><a class="headerlink" href="#jarak-titik-10-ke-titik-8" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+d(10,8) = \sqrt{(x_8 - x_{10})^2 + (y_8 - y_{10})^2}
+\)</span>
+Misalkan:</p>
 <ul class="simple">
-<li><p>Titik 10 ke Titik 9: 17.20</p></li>
-<li><p>Titik 10 ke Titik 8: 16.12</p></li>
-<li><p>Titik 10 ke Titik 7: 15.03</p></li>
+<li><p>( x_8 = 18 ), ( y_8 = 22 )</p></li>
 </ul>
-</li>
+<p><span class="math notranslate nohighlight">\(
+d(10,8) = \sqrt{(18 - 5)^2 + (22 - 8)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{(13)^2 + (14)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{169 + 196}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{365}
+\)</span>
+<span class="math notranslate nohighlight">\(
+\approx 16.12
+\)</span></p>
+</section>
+<section id="jarak-titik-10-ke-titik-7">
+<h3><strong>Jarak Titik 10 ke Titik 7</strong><a class="headerlink" href="#jarak-titik-10-ke-titik-7" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(
+d(10,7) = \sqrt{(x_7 - x_{10})^2 + (y_7 - y_{10})^2}
+\)</span>
+Misalkan:</p>
+<ul class="simple">
+<li><p>( x_7 = 17 ), ( y_7 = 19 )</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(
+d(10,7) = \sqrt{(17 - 5)^2 + (19 - 8)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{(12)^2 + (11)^2}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{144 + 121}
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \sqrt{265}
+\)</span>
+<span class="math notranslate nohighlight">\(
+\approx 15.03
+\)</span></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="tentukan-k-tetangga-terdekat-k-3">
+<h2><strong>3. Tentukan k-Tetangga Terdekat</strong> (k = 3)<a class="headerlink" href="#tentukan-k-tetangga-terdekat-k-3" title="Link to this heading">#</a></h2>
+<p>Untuk menemukan <strong>tiga tetangga terdekat</strong> dari <strong>Titik 10</strong>, kita mengurutkan hasil jarak Euclidean:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Titik</p></th>
+<th class="head"><p>Jarak ke Titik 10</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>15.03</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>16.12</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>17.20</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Karena <strong>k = 3</strong>, maka <strong>tiga tetangga terdekat dari Titik 10</strong> adalah <strong>Titik 7, Titik 8, dan Titik 9</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="hitung-reachability-distance">
+<h2><strong>4. Hitung Reachability Distance</strong><a class="headerlink" href="#hitung-reachability-distance" title="Link to this heading">#</a></h2>
+<p>Dalam algoritma <strong>DBSCAN dan LOF</strong>, <strong>reachability distance</strong> antara dua titik A dan B didefinisikan sebagai:</p>
+<p><span class="math notranslate nohighlight">\(
+\text{reachability-distance}(A, B) = \max(\text{k-distance}(B), d(A, B))
+\)</span></p>
+<p>Dalam kasus ini, <strong>k-distance(B) = d(A, B)</strong> karena kita hanya mempertimbangkan k tetangga terdekat, jadi:</p>
+<ol class="arabic simple">
+<li><p><strong>Reachability Distance Titik 10 ke Titik 9</strong><br />
+<span class="math notranslate nohighlight">\(
+\text{reachability-distance}(10,9) = \max(d(10,9), \text{k-distance}(9))
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \max(17.20, 17.20)
+\)</span>
+<span class="math notranslate nohighlight">\(
+= 17.20
+\)</span></p></li>
+<li><p><strong>Reachability Distance Titik 10 ke Titik 8</strong><br />
+<span class="math notranslate nohighlight">\(
+\text{reachability-distance}(10,8) = \max(d(10,8), \text{k-distance}(8))
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \max(16.12, 16.12)
+\)</span>
+<span class="math notranslate nohighlight">\(
+= 16.12
+\)</span></p></li>
+<li><p><strong>Reachability Distance Titik 10 ke Titik 7</strong><br />
+<span class="math notranslate nohighlight">\(
+\text{reachability-distance}(10,7) = \max(d(10,7), \text{k-distance}(7))
+\)</span>
+<span class="math notranslate nohighlight">\(
+= \max(15.03, 15.03)
+\)</span>
+<span class="math notranslate nohighlight">\(
+= 15.03
+\)</span></p></li>
+</ol>
+<p>Jika ada yang kurang jelas atau ingin perhitungan lebih lanjut, silakan tanyakan! 😊</p>
+<ol class="arabic simple" start="5">
 <li><p><strong>Hitung Local Reachability Density (LRD)</strong>:<br />
 <span class="math notranslate nohighlight">\(
 \text{LRD}(10) = \frac{1}{\frac{1}{3} \times (17.20 + 16.12 + 15.03)} = 0.062
@@ -905,6 +1077,14 @@ Data Outlier:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apa-itu-lof">APA ITU LOF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagaimana-tahapan-lof">BAGAIMANA TAHAPAN LOF</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-menghitung-manual-lof">CONTOH MENGHITUNG MANUAL LOF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-jarak-euclidean"><strong>2. Hitung Jarak Euclidean</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-9"><strong>Jarak Titik 10 ke Titik 9</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-8"><strong>Jarak Titik 10 ke Titik 8</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jarak-titik-10-ke-titik-7"><strong>Jarak Titik 10 ke Titik 7</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tentukan-k-tetangga-terdekat-k-3"><strong>3. Tentukan k-Tetangga Terdekat</strong> (k = 3)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hitung-reachability-distance"><strong>4. Hitung Reachability Distance</strong></a></li>
 </ul>
   </nav></div>
 
