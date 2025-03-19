@@ -1294,7 +1294,7 @@ Iris-versicolor       1.00      0.86      0.92         7
 
 
 <span class="c1"># Ambil dua fitur utama untuk visualisasi decision boundary</span>
-<span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">]</span>
+<span class="n">feature_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">]</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="n">feature_columns</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">df_merged</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">]</span>
 
@@ -1367,19 +1367,19 @@ Iris-versicolor       1.00      0.86      0.92         7
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 0.9629629629629629
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 0.8148148148148148
                  precision    recall  f1-score   support
 
     Iris-setosa       1.00      1.00      1.00        12
-Iris-versicolor       1.00      0.86      0.92         7
- Iris-virginica       0.89      1.00      0.94         8
+Iris-versicolor       0.62      0.71      0.67         7
+ Iris-virginica       0.71      0.62      0.67         8
 
-       accuracy                           0.96        27
-      macro avg       0.96      0.95      0.95        27
-   weighted avg       0.97      0.96      0.96        27
+       accuracy                           0.81        27
+      macro avg       0.78      0.78      0.78        27
+   weighted avg       0.82      0.81      0.81        27
 </pre></div>
 </div>
-<img alt="_images/c27122a6c3bef6573bef7a15205ed7f436df6eaf248261a1db5035b8a4ba6d7b.png" src="_images/c27122a6c3bef6573bef7a15205ed7f436df6eaf248261a1db5035b8a4ba6d7b.png" />
+<img alt="_images/e47bb03224aaddb2bdf3903f341e7685854fd5c9ee94e0ccaf9f296ba6841ddc.png" src="_images/e47bb03224aaddb2bdf3903f341e7685854fd5c9ee94e0ccaf9f296ba6841ddc.png" />
 </div>
 </div>
 <div class="cell docutils container">
