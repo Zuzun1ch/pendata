@@ -805,16 +805,13 @@ Entropy(D) = -\frac{8}{15} \log_2 \frac{8}{15} - \frac{7}{15} \log_2 \frac{7}{15
 <section id="group-left-200-kg">
 <h4>Group Left (≤ 200 kg):<a class="headerlink" href="#group-left-200-kg" title="Link to this heading">#</a></h4>
 <ul class="simple">
-<li><p>6 <em>Panthera leo</em>: No 13, 9, 6, 15, 8, 7</p></li>
-<li><p>2 <em>Panthera tigris</em>: No 4, 10</p></li>
+<li><p>7 <em>Panthera leo</em>: No 13, 9, 6, 15, 8, 7, 10</p></li>
+<li><p>1 <em>Panthera tigris</em>: No 4</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-Entropy(left) = -\frac{6}{8} \log_2 \frac{6}{8} - \frac{2}{8} \log_2 \frac{2}{8} \\
-= -0.75 \log_2 0.75 - 0.25 \log_2 0.25 \\
-\approx -0.75(-0.415) - 0.25(-2) \\
-\approx 0.311 + 0.5 = \boxed{0.811}
-\end{split}\]</div>
+\[
+Entropy(left) = -\frac{7}{8}\log_2\frac{7}{8} - \frac{1}{8}\log_2\frac{1}{8} \approx 0.543
+\]</div>
 </section>
 <section id="group-right-200-kg">
 <h4>Group Right (&gt; 200 kg):<a class="headerlink" href="#group-right-200-kg" title="Link to this heading">#</a></h4>
@@ -830,10 +827,9 @@ Entropy(right) = -\frac{7}{7} \log_2 \frac{7}{7} = 0
 <section id="information-gain">
 <h3>5. Information Gain<a class="headerlink" href="#information-gain" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-IG = Entropy(D) - \left( \frac{8}{15} \cdot 0.811 + \frac{7}{15} \cdot 0 \right) \\
-= 0.996 - 0.432 = \boxed{0.564}
-\end{split}\]</div>
+\[
+IG = Entropy(D) - \left( \frac{8}{15} \cdot 0.543 + \frac{7}{15} \cdot 0 \right) \approx 0.996 - 0.2896 \approx \boxed{0.7064}
+\]</div>
 </section>
 <section id="id2">
 <h3>6. Gini Index<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
@@ -845,7 +841,7 @@ Gini(D) = 1 - \left(\frac{8}{15}\right)^2 - \left(\frac{7}{15}\right)^2 \approx 
 <h4>Gini(Left):<a class="headerlink" href="#gini-left" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
-Gini = 1 - (6/8)^2 - (2/8)^2 = 1 - 0.5625 - 0.0625 = \boxed{0.375}
+Gini(left) = 1 - \left(\frac{7}{8}\right)^2 - \left(\frac{1}{8}\right)^2 = 1 - 0.765625 - 0.015625 = 0.21875
 \]</div>
 </section>
 <section id="gini-right">
@@ -856,7 +852,7 @@ Gini = 1 - (6/8)^2 - (2/8)^2 = 1 - 0.5625 - 0.0625 = \boxed{0.375}
 <h4>Gini Split:<a class="headerlink" href="#gini-split" title="Link to this heading">#</a></h4>
 <div class="math notranslate nohighlight">
 \[
-Gini_{split} = \frac{8}{15} \cdot 0.375 + \frac{7}{15} \cdot 0 = \boxed{0.2}
+Gini_{split} = \frac{8}{15} \cdot 0.21875 + \frac{7}{15} \cdot 0 = \boxed{0.116}
 \]</div>
 </section>
 </section>
@@ -874,7 +870,7 @@ Gini_{split} = \frac{8}{15} \cdot 0.375 + \frac{7}{15} \cdot 0 = \boxed{0.2}
 <td><p>0.996</p></td>
 </tr>
 <tr class="row-odd"><td><p>Information Gain</p></td>
-<td><p>0.564</p></td>
+<td><p>0.706</p></td>
 </tr>
 <tr class="row-even"><td><p>Gini Split</p></td>
 <td><p>0.200</p></td>
@@ -898,16 +894,12 @@ Gini_{split} = \frac{8}{15} \cdot 0.375 + \frac{7}{15} \cdot 0 = \boxed{0.2}
 <td><p>0.116</p></td>
 </tr>
 <tr class="row-odd"><td><p>Berat Tubuh</p></td>
-<td><p>0.564</p></td>
-<td><p>0.200</p></td>
+<td><p>0.706</p></td>
+<td><p>0.116</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<blockquote>
-<div><p>Fitur terbaik untuk split pertama adalah: Panjang Tubuh
-karena memberikan Information Gain tertinggi dan Gini terkecil.</p>
-</div></blockquote>
 </section>
 <section id="visualisasi-decision-tree">
 <h2>Visualisasi Decision Tree<a class="headerlink" href="#visualisasi-decision-tree" title="Link to this heading">#</a></h2>
