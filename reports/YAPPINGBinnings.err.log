@@ -1,0 +1,85 @@
+Traceback (most recent call last):
+  File "/usr/local/python/3.12.1/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/python/3.12.1/lib/python3.12/asyncio/base_events.py", line 684, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/codespace/.local/lib/python3.12/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Fungsi manual untuk equal-frequency discretization
+def discretize_cdf(data, m):
+    data = list(data)
+    data_sorted = sorted(data)
+    n = len(data_sorted)
+    thresholds = [-float('inf')]
+
+    # Hitung batas kuantil
+    for k in range(1, m):
+        q = k / m
+        index = (n - 1) * q
+        floor = int(index)
+        ceil = floor + 1
+        frac = index - floor
+        if ceil >= n:
+            val = data_sorted[floor]
+        else:
+            val = data_sorted[floor] + (data_sorted[ceil] - data_sorted[floor]) * frac
+        thresholds.append(val)
+
+    thresholds.append(float('inf'))
+
+    # Tentukan label bin untuk setiap nilai
+    labels = []
+    for value in data:
+        for b in range(1, len(thresholds)):
+            if thresholds[b - 1] <= value < thresholds[b]:
+                labels.append(label_map[b - 1])
+                break
+
+    return labels
+
+# Terapkan discretization ke setiap kolom
+df_equal_frequency = pd.DataFrame({
+    'sepal_length': discretize_cdf(df['sepal length (cm)'], 4),
+    'sepal_width':  discretize_cdf(df['sepal width (cm)'], 4),
+    'petal_length': discretize_cdf(df['petal length (cm)'], 4),
+    'petal_width':  discretize_cdf(df['petal width (cm)'], 4)
+})
+
+# Tambahkan kolom kelas di depan
+df_equal_frequency.insert(0, 'class')
+
+# Tampilkan hasil
+print(df_equal_frequency.to_string(index=False))
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[13], line 42[0m
+[1;32m     34[0m df_equal_frequency [38;5;241m=[39m pd[38;5;241m.[39mDataFrame({
+[1;32m     35[0m     [38;5;124m'[39m[38;5;124msepal_length[39m[38;5;124m'[39m: discretize_cdf(df[[38;5;124m'[39m[38;5;124msepal length (cm)[39m[38;5;124m'[39m], [38;5;241m4[39m),
+[1;32m     36[0m     [38;5;124m'[39m[38;5;124msepal_width[39m[38;5;124m'[39m:  discretize_cdf(df[[38;5;124m'[39m[38;5;124msepal width (cm)[39m[38;5;124m'[39m], [38;5;241m4[39m),
+[1;32m     37[0m     [38;5;124m'[39m[38;5;124mpetal_length[39m[38;5;124m'[39m: discretize_cdf(df[[38;5;124m'[39m[38;5;124mpetal length (cm)[39m[38;5;124m'[39m], [38;5;241m4[39m),
+[1;32m     38[0m     [38;5;124m'[39m[38;5;124mpetal_width[39m[38;5;124m'[39m:  discretize_cdf(df[[38;5;124m'[39m[38;5;124mpetal width (cm)[39m[38;5;124m'[39m], [38;5;241m4[39m)
+[1;32m     39[0m })
+[1;32m     41[0m [38;5;66;03m# Tambahkan kolom kelas di depan[39;00m
+[0;32m---> 42[0m [43mdf_equal_frequency[49m[38;5;241;43m.[39;49m[43minsert[49m[43m([49m[38;5;241;43m0[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mclass[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m     44[0m [38;5;66;03m# Tampilkan hasil[39;00m
+[1;32m     45[0m [38;5;28mprint[39m(df_equal_frequency[38;5;241m.[39mto_string(index[38;5;241m=[39m[38;5;28;01mFalse[39;00m))
+
+[0;31mTypeError[0m: DataFrame.insert() missing 1 required positional argument: 'value'
+
